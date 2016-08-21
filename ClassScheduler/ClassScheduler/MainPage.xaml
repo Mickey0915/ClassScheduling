@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Button Name="HamburgerButton"
                 Grid.Row="0"
-                Content="home"
+                Content="Home"
                 FontSize="24"/>
 
     </Grid>
