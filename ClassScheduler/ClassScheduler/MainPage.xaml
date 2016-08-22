@@ -16,8 +16,11 @@
             
              <Button Name="HamburgerButton"
                      Click="HamburgerButton_Click"
-                     Content="Home"
-                     FontSize="24"/>
+                     FontFamily="Segoe MDL2 Assets"
+                     FontSize="12"
+                     Content="&#xE700;"
+                     Width="44"
+                     Height="44"/>
             
         </RelativePanel>
         <SplitView  Name="MySplitView"
@@ -25,13 +28,21 @@
                     OpenPaneLength="160"
                     CompactPaneLength="56"
                     Grid.Row="1">
-            <ListBox SelectionMode="Single"
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single"
                      Name="MyListBox"
                      SelectionChanged="MyListBox_SelectionChanged">
-                <ListBoxItem/>
-                <ListBoxItem/>
-                <ListBoxItem/>
-            </ListBox>
+                    <ListBoxItem>
+                        
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
         </SplitView>
        
         <Frame Name="MyFrame">

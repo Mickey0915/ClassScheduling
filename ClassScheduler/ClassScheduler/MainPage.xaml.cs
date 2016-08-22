@@ -29,7 +29,7 @@ namespace ClassScheduler
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
         private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
