@@ -26,5 +26,15 @@ namespace ClassScheduler
         {
             this.InitializeComponent();
         }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

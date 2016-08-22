@@ -10,12 +10,33 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Name="HamburgerButton"
-                Grid.Row="0"
-                Content="Home"
-                FontSize="24"/>
+        <RelativePanel Grid.Row="0">
+            
+             <Button Name="HamburgerButton"
+                     Click="HamburgerButton_Click"
+                     Content="Home"
+                     FontSize="24"/>
+            
+        </RelativePanel>
+        <SplitView  Name="MySplitView"
+                    DisplayMode="CompactOverlay"
+                    OpenPaneLength="160"
+                    CompactPaneLength="56"
+                    Grid.Row="1">
+            <ListBox SelectionMode="Single"
+                     Name="MyListBox"
+                     SelectionChanged="MyListBox_SelectionChanged">
+                <ListBoxItem/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+            </ListBox>
+        </SplitView>
+       
+        <Frame Name="MyFrame">
 
+        </Frame>
     </Grid>
+   
 </Page>
