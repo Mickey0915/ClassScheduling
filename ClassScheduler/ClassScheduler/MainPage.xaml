@@ -32,8 +32,14 @@
                 <ListBox SelectionMode="Single"
                      Name="MyListBox"
                      SelectionChanged="MyListBox_SelectionChanged">
-                    <ListBoxItem>
-                        
+                    <ListBoxItem Name="Schedule">
+                        <StackPanel>
+                            <TextBlock FontFamily="Segoe MDL2 Assets"
+                                       FontSize="12"
+                                       Text="&#xE162;"/>
+                            <TextBlock FontSize="24"
+                                       Text="Financial"/>
+                        </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem>
                         
@@ -43,11 +49,14 @@
                     </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="MyFrame">
+
+                </Frame>
+            </SplitView.Content>
         </SplitView>
        
-        <Frame Name="MyFrame">
-
-        </Frame>
+       
     </Grid>
    
 </Page>
