@@ -20,9 +20,9 @@ namespace ClassScheduler
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
     /// </summary>
-    public sealed partial class Schedule : Page
+    public sealed partial class schedule : Page
     {
-        public Schedule()
+        public schedule()
         {
             this.InitializeComponent();
         }

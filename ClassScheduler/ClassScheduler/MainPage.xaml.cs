@@ -25,17 +25,18 @@ namespace ClassScheduler
         public MainPage()
         {
             this.InitializeComponent();
-            MyFrame.Navigate(typeof(Schedule));
         }
 
-
-        private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MyListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
             if(HamburgerMenu.IsSelected)
-            { MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen; }
-            else if (Schedule.IsSelected)
-            { MyFrame.Navigate(typeof(Schedule)); }
+            {
+                MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+            }
+            else if(ScheduleIcon.IsSelected)
+            {
+                MyFrame.Navigate(typeof(MainPage));
+            }
         }
     }
 }

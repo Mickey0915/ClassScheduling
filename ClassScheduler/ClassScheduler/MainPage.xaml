@@ -7,80 +7,63 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    
-       
+    <Page.Resources>
+        <Style x:Key="ListIconStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextAlignment" Value="DetectFromContent"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="4,0,0,0"/>
+        </Style>
+        <Style x:Key="ListDescirptionStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextAlignment" Value="DetectFromContent"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+        </Style>
+    </Page.Resources>
 
-
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <RelativePanel Grid.Row="0">
 
-           
-
-        </RelativePanel>
-        <SplitView  Name="MySplitView"
-                    DisplayMode="CompactOverlay"
-                    OpenPaneLength="132"
-                    CompactPaneLength="48"
-                    Grid.Row="1"
-                    PaneBackground="White">
+        <SplitView Name="MySplitView"
+                   DisplayMode="CompactOverlay"
+                   OpenPaneLength="132"
+                   CompactPaneLength="48"
+                   Grid.Row="1">
             <SplitView.Pane>
-                <ListBox SelectionMode="Single"
-                     Name="MyListBox"
-                     SelectionChanged="MyListBox_SelectionChanged" 
-                   >
-                    <ListBoxItem Name="HamburgerMenu" >
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <ListBox Name="MyListbox"
+                         SelectionMode="Single"
+                         SelectionChanged="MyListbox_SelectionChanged">
+                    <ListBoxItem Name="HamburgerMenu">
+                        <StackPanel>
                             <TextBlock Style="{StaticResource ListIconStyle}"
-                                       Foreground="Orange"
-                                       Text="&#xE700;"
-                                       TextAlignment="DetectFromContent"
-                                       VerticalAlignment="Center"
-                                       Margin="4,0,0,0"/>
+                                       Text="&#xE700;"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Schedule">
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Top">
-                               
+                    <ListBoxItem Name="ScheduleIcon">
+                        <StackPanel Orientation="Horizontal">
                             <TextBlock Style="{StaticResource ListIconStyle}"
-                                       Text="&#xE162;"
-                                       />
-                            <TextBlock Style="{StaticResource ListDescription}"
-                                       Text="Schedule"
-                                       Margin="20,0,0,0"/>
+                                       Text="&#xE162;"/>
+                            <TextBlock Style="{StaticResource ListDescirptionStyle}"
+                                       Text="Schedule"/>
                         </StackPanel>
                     </ListBoxItem>
-                    
-                    <ListBoxItem>
-
-                    </ListBoxItem>
-                    
-                    <ListBoxItem>
-
-                    </ListBoxItem>
-                    
                     <ListBox.Background>
                         <SolidColorBrush Color="White"/>
                     </ListBox.Background>
-
                 </ListBox>
             </SplitView.Pane>
             <SplitView.Content>
                 <Frame Name="MyFrame">
-
+                    
                 </Frame>
             </SplitView.Content>
         </SplitView>
-
-
-    </Grid>
-
-  
+        
       
+    </Grid>
+   
 </Page>
