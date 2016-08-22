@@ -35,7 +35,8 @@ namespace ClassScheduler
 
         private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (Schedule.IsSelected)
+            { MyFrame.Navigate(typeof(Schedule)); }
         }
     }
 }

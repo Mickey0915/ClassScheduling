@@ -13,39 +13,46 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <RelativePanel Grid.Row="0">
-            
-             <Button Name="HamburgerButton"
+
+            <Button Name="HamburgerButton"
                      Click="HamburgerButton_Click"
                      FontFamily="Segoe MDL2 Assets"
-                     FontSize="12"
+                     FontSize="20"
                      Content="&#xE700;"
-                     Width="44"
-                     Height="44"/>
-            
+                     Width="48"
+                     Height="48"/>
+
         </RelativePanel>
         <SplitView  Name="MySplitView"
                     DisplayMode="CompactOverlay"
-                    OpenPaneLength="160"
-                    CompactPaneLength="56"
+                    OpenPaneLength="132"
+                    CompactPaneLength="48"
                     Grid.Row="1">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single"
                      Name="MyListBox"
                      SelectionChanged="MyListBox_SelectionChanged">
-                    <ListBoxItem Name="Schedule">
-                        <StackPanel>
+                    <ListBoxItem Name="Schedule" >
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            
                             <TextBlock FontFamily="Segoe MDL2 Assets"
-                                       FontSize="12"
-                                       Text="&#xE162;"/>
-                            <TextBlock FontSize="24"
-                                       Text="Financial"/>
+                                       FontSize="16"
+                                       Text="&#xE162;"
+                                       TextAlignment="DetectFromContent"
+                                       VerticalAlignment="Center"
+                                       Margin="4,0,0,0"/>
+                            <TextBlock FontSize="16"
+                                       Text="Schedule"
+                                       TextAlignment="DetectFromContent"
+                                       Margin="20,0,0,0"
+                                       />
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem>
-                        
+
                     </ListBoxItem>
                     <ListBoxItem>
-                        
+
                     </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>
@@ -55,8 +62,8 @@
                 </Frame>
             </SplitView.Content>
         </SplitView>
-       
-       
+
+
     </Grid>
-   
+
 </Page>
