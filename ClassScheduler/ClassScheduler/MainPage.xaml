@@ -20,6 +20,13 @@
             <Setter Property="TextAlignment" Value="DetectFromContent"/>
             <Setter Property="Margin" Value="20,0,0,0"/>
         </Style>
+        <!-- <Style x:Key="ListBoxStackPanelStyle" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Style.BasedOn>
+                <Setter Property="Style" Value="{StaticResource ListIconStyle}"/>
+               
+            </Style.BasedOn>
+        </Style> -->
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -39,12 +46,14 @@
                          SelectionMode="Single"
                          SelectionChanged="MyListbox_SelectionChanged"
                          >
-                    <ListBoxItem Name="HamburgerMenu">
-                        <StackPanel>
-                            <TextBlock Style="{StaticResource ListIconStyle}"
-                                       Text="&#xE700;"
-                                       Foreground="Orange"/>
-                        </StackPanel>
+                    <ListBoxItem Name="HamburgerMenu" Tapped="HamburgerMenu_Tapped" Height="48">
+                        <TextBlock Style="{StaticResource ListIconStyle}"
+                                   Text="&#xE700;"
+                                   Width="48"
+                                   
+                                   Margin="4,0,0,0"
+                                   Foreground="Orange"/>
+
                     </ListBoxItem>
                     <ListBoxItem Name="ScheduleIcon">
                         <StackPanel Orientation="Horizontal">
@@ -52,6 +61,14 @@
                                        Text="&#xE162;"/>
                             <TextBlock Style="{StaticResource ListDescirptionStyle}"
                                        Text="Schedule"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="ShareIcon">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ListIconStyle}"
+                                       Text="&#xE72D;"/>
+                            <TextBlock Style="{StaticResource ListDescirptionStyle}"
+                                       Text="Share"/>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBox.Background>

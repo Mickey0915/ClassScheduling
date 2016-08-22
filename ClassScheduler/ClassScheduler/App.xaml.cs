@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Core;
 
 namespace ClassScheduler
 {
@@ -22,6 +23,7 @@ namespace ClassScheduler
     /// </summary>
     sealed partial class App : Application
     {
+
         /// <summary>
         /// 単一アプリケーション オブジェクトを初期化します。これは、実行される作成したコードの
         ///最初の行であるため、main() または WinMain() と論理的に等価です。
@@ -30,6 +32,9 @@ namespace ClassScheduler
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+           
+            
+
         }
 
         /// <summary>
@@ -50,6 +55,8 @@ namespace ClassScheduler
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+                rootFrame.Navigated += OnNavigated;
+
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
@@ -58,6 +65,14 @@ namespace ClassScheduler
 
                 // フレームを現在のウィンドウに配置します
                 Window.Current.Content = rootFrame;
+                // Register a handler for BackRequested events and set the
+                // visibility of the Back button
+                SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                    rootFrame.CanGoBack ?
+                    AppViewBackButtonVisibility.Visible :
+                    AppViewBackButtonVisibility.Collapsed;
             }
 
             if (e.PrelaunchActivated == false)
@@ -84,6 +99,14 @@ namespace ClassScheduler
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            // Each time a navigation event occurs, update the Back button's visibility
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                ((Frame)sender).CanGoBack ?
+                AppViewBackButtonVisibility.Visible :
+                AppViewBackButtonVisibility.Collapsed;
+        }
         /// <summary>
         /// アプリケーションの実行が中断されたときに呼び出されます。
         /// アプリケーションが終了されるか、メモリの内容がそのままで再開されるかに
@@ -97,5 +120,17 @@ namespace ClassScheduler
             //TODO: アプリケーションの状態を保存してバックグラウンドの動作があれば停止します
             deferral.Complete();
         }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame.CanGoBack)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
+        }
+
     }
 }
