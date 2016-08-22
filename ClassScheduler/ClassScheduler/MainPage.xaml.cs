@@ -28,14 +28,13 @@ namespace ClassScheduler
             MyFrame.Navigate(typeof(Schedule));
         }
 
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-        }
 
         private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Schedule.IsSelected)
+           
+            if(HamburgerMenu.IsSelected)
+            { MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen; }
+            else if (Schedule.IsSelected)
             { MyFrame.Navigate(typeof(Schedule)); }
         }
     }
