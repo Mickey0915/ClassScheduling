@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
+using Windows.UI;
 
 // 空白ページのアイテム テンプレートについては、http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 を参照してください
 
@@ -23,13 +24,15 @@ namespace ClassScheduler
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
+        public object Current { get; private set; }
 
         public MainPage()
         {
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
             MyFrame.Navigate(typeof(Schedule));
+
+           
         }
 
         private void MainPage_BackRequested(object sender, BackRequestedEventArgs e)

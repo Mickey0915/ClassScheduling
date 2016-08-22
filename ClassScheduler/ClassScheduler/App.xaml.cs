@@ -15,6 +15,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
+using Windows.UI;
+using Windows.Foundation.Metadata;
+
 
 namespace ClassScheduler
 {
@@ -32,9 +36,7 @@ namespace ClassScheduler
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-           
             
-
         }
 
         /// <summary>
@@ -51,6 +53,32 @@ namespace ClassScheduler
             // ウィンドウがアクティブであることだけを確認してください
             if (rootFrame == null)
             {
+                //PC customization
+                if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
+                {
+                    var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+                    if (titleBar != null)
+                    {
+                        titleBar.ButtonBackgroundColor = Colors.OrangeRed;
+                        titleBar.ButtonForegroundColor = Colors.White;
+                        titleBar.BackgroundColor = Colors.Orange;
+                        titleBar.ForegroundColor = Colors.White;
+                    }
+                }
+
+                //Mobile customization
+                if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+                {
+
+                    var statusBar = StatusBar.GetForCurrentView();
+                    if (statusBar != null)
+                    {
+                        statusBar.BackgroundOpacity = 1;
+                        statusBar.BackgroundColor = Colors.OrangeRed;
+                        statusBar.ForegroundColor = Colors.Orange;
+                    }
+                }
+
                 // ナビゲーション コンテキストとして動作するフレームを作成し、最初のページに移動します
                 rootFrame = new Frame();
 
@@ -131,6 +159,7 @@ namespace ClassScheduler
                 rootFrame.GoBack();
             }
         }
+
 
     }
 }
