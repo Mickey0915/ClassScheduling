@@ -25,6 +25,7 @@ namespace ClassScheduler
         public MainPage()
         {
             this.InitializeComponent();
+            MyFrame.Navigate(typeof(Schedule));
         }
 
         private void MyListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -33,9 +34,10 @@ namespace ClassScheduler
             {
                 MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
             }
-            else if(ScheduleIcon.IsSelected)
+
+            else if (ScheduleIcon.IsSelected)
             {
-                MyFrame.Navigate(typeof(MainPage));
+                MyFrame.Navigate(typeof(Schedule));
             }
         }
     }

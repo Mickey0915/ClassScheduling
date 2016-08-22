@@ -32,15 +32,18 @@
                    DisplayMode="CompactOverlay"
                    OpenPaneLength="132"
                    CompactPaneLength="48"
-                   Grid.Row="1">
+                   Grid.Row="1"
+                   >
             <SplitView.Pane>
                 <ListBox Name="MyListbox"
                          SelectionMode="Single"
-                         SelectionChanged="MyListbox_SelectionChanged">
+                         SelectionChanged="MyListbox_SelectionChanged"
+                         >
                     <ListBoxItem Name="HamburgerMenu">
                         <StackPanel>
                             <TextBlock Style="{StaticResource ListIconStyle}"
-                                       Text="&#xE700;"/>
+                                       Text="&#xE700;"
+                                       Foreground="Orange"/>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="ScheduleIcon">
