@@ -23,8 +23,14 @@ namespace ClassScheduler
     /// </summary>
     public sealed partial class MainPage : Page
     {
-       
+        private void HamburgerMenu_ItemClick(object sender, ItemClickEventArgs e)
+        {
 
-       
+        }
+
+        private void HamburgerMenu_OptionsItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

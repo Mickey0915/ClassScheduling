@@ -9,18 +9,17 @@
      >
 
     <Page.Resources>
-        <DataTemplate x:Key="ButtonTemplate" x:DataType="data:PhotoDataItem">
+        <DataTemplate x:Key="ButtonTemplate" >
             <Grid Width="240" Height="48">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="48"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Image Source="{x:Bind Thumbnail}" 
-                       Stretch="UniformToFill" 
+                <Image    
                        Margin="12,12,11,12"/>
                 <TextBlock Grid.Column="1" 
-                           Text="{x:Bind Title}" 
-                           Foreground="White" 
+                           Text="wee" 
+                           Foreground="Beige" 
                            FontSize="16" 
                            VerticalAlignment="Center"/>
             </Grid>
@@ -35,14 +34,40 @@
                 <FontIcon Grid.Column="0" 
                           Margin="12,12,11,12" 
                           FontFamily="Segoe MDL2 Assets" 
-                          Glyph="{Binding Glyph}" Foreground="White" />
+                          Glyph="{Binding Glyph}" Foreground="Red" />
                 <TextBlock Grid.Column="1" 
                            Text="{Binding Name}" 
-                           Foreground="White" 
+                           Foreground="Green" 
                            FontSize="16" VerticalAlignment="Center"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,60,60" BorderThickness="1" BorderBrush="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="151*"/>
+        </Grid.RowDefinitions>
+        <controls:HamburgerMenu PaneBackground="White"
+                                x:Name="HamburgerMenu"
+                                Foreground="Black"
+                                ItemTemplate="{StaticResource ButtonTemplate}"
+                                OptionsItemTemplate="{StaticResource OptionTemplate}"
+                                ItemClick="HamburgerMenu_ItemClick"
+                                OptionsItemClick="HamburgerMenu_OptionsItemClick"
+                                OpenPaneLength="132"
+                                DisplayMode="CompactOverlay"
+                                CompactPaneLength="48"
+                                HamburgerHeight="48"
+                                IsPaneOpen="True" Margin="3,0,767,67" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Border Background="Black" Margin="105,0,-308,0"/>
+            </Grid>
+        </controls:HamburgerMenu>
+    </Grid>
 
 
 </Page>
