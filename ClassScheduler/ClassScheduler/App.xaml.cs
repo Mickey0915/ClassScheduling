@@ -63,6 +63,8 @@ namespace ClassScheduler
                         titleBar.ButtonForegroundColor = Colors.White;
                         titleBar.BackgroundColor = Colors.Orange;
                         titleBar.ForegroundColor = Colors.White;
+                        titleBar.ButtonPressedBackgroundColor = Colors.LightSalmon;
+                        titleBar.ButtonHoverBackgroundColor = Colors.LightSalmon;
                     }
                 }
 
