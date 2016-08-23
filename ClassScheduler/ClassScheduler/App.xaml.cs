@@ -59,12 +59,13 @@ namespace ClassScheduler
                     var titleBar = ApplicationView.GetForCurrentView().TitleBar;
                     if (titleBar != null)
                     {
-                        titleBar.ButtonBackgroundColor = Colors.OrangeRed;
+                        titleBar.ButtonBackgroundColor = Colors.Orange;
                         titleBar.ButtonForegroundColor = Colors.White;
                         titleBar.BackgroundColor = Colors.Orange;
                         titleBar.ForegroundColor = Colors.White;
                         titleBar.ButtonPressedBackgroundColor = Colors.LightSalmon;
                         titleBar.ButtonHoverBackgroundColor = Colors.LightSalmon;
+                        titleBar.ButtonInactiveForegroundColor = Colors.White;
                     }
                 }
 
@@ -76,7 +77,7 @@ namespace ClassScheduler
                     if (statusBar != null)
                     {
                         statusBar.BackgroundOpacity = 1;
-                        statusBar.BackgroundColor = Colors.OrangeRed;
+                        statusBar.BackgroundColor = Colors.Orange;
                         statusBar.ForegroundColor = Colors.Orange;
                     }
                 }

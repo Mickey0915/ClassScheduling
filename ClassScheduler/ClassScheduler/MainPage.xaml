@@ -244,7 +244,7 @@
                                 Background="Transparent" 
                                 Foreground="Orange"
                                 Style="{StaticResource ButtonStyle1}" 
-                                Height="40"
+                                Height="48"
                                 FontFamily="Segoe MDL2 Assets" 
                                 Width="132"
                                 Content="&#xE700;"
