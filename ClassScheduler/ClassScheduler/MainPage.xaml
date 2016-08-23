@@ -213,7 +213,7 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
@@ -234,9 +234,26 @@
                                  Margin="0,0,0,0"
                                  Style="{StaticResource ListBoxItemStyle1}"
                                  HorizontalAlignment="Left"
+                                 Padding="0"
                                 >
+                        <TextBlock x:Name="HambergerMenuIcon"
+                                   Style="{StaticResource ListIconStyle}"
+                                   Tapped="HambergerMenuIcon_Tapped"
+                                   Foreground="Orange" 
+                                   Height="48"
+                                   Width="132"
+                                   Margin="0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Left" TextWrapping="WrapWholeWords" CharacterSpacing="2"
+                                       >
+                            <Run/>
+                            <LineBreak/>
+                            <Run Text="    &#xE700;"/>
+                        </TextBlock>
 
-                        <Button x:Name="TestButton"
+                        <!--
+                            <Button x:Name="TestButton"
                                 Padding="0,0,0,0"
                                 FontSize="16"
                                 Click="TestButton_Click" 
@@ -251,10 +268,13 @@
                                 HorizontalContentAlignment="Left"
                                 
                                 />
+                            -->
+
+
 
                     </ListBoxItem>
 
-                   
+
                     <ListBoxItem Name="ScheduleIcon" Style="{StaticResource ListBoxItemStyle1}" >
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Style="{StaticResource ListIconStyle}"

@@ -98,14 +98,19 @@ namespace ClassScheduler
               .BackRequested -= Page_BackRequested;
         }
 
-        private void TestButton_Click(object sender, RoutedEventArgs e)
+       /// private void TestButton_Click(object sender, RoutedEventArgs e)
+        ///{
+            ///MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        ///}
+
+        private void HambergerMenuIcon_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
-        
-       /// private void HamburgerListbox_Tapped(object sender, TappedRoutedEventArgs e)
+
+        /// private void HamburgerListbox_Tapped(object sender, TappedRoutedEventArgs e)
         ///{
-           /// MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        /// MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         ///}
     }
 }
