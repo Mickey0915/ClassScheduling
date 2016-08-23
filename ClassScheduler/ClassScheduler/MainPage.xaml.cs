@@ -29,20 +29,13 @@ namespace ClassScheduler
         public MainPage()
         {
             this.InitializeComponent();
-            SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
+           
             MyFrame.Navigate(typeof(Schedule));
 
            
         }
 
-        private void MainPage_BackRequested(object sender, BackRequestedEventArgs e)
-        {
-            if (MyFrame.CanGoBack)
-            {
-                e.Handled = true;
-                MyFrame.GoBack();
-            }
-        }
+     
 
         private class IconSelection
         {
@@ -51,12 +44,7 @@ namespace ClassScheduler
 
         private void MyListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(HamburgerMenu.IsSelected)
-            {
-               
-            }
-
-            else if (ScheduleIcon.IsSelected)
+            if (ScheduleIcon.IsSelected)
             {
                 MyFrame.Navigate(typeof(Schedule));
             }
@@ -70,6 +58,7 @@ namespace ClassScheduler
         private void HamburgerMenu_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+            
         }
 
         // ページ表示時
@@ -108,5 +97,15 @@ namespace ClassScheduler
             SystemNavigationManager.GetForCurrentView()
               .BackRequested -= Page_BackRequested;
         }
+
+        private void TestButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+        
+       /// private void HamburgerListbox_Tapped(object sender, TappedRoutedEventArgs e)
+        ///{
+           /// MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        ///}
     }
 }
