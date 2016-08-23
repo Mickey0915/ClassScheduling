@@ -291,6 +291,13 @@
                                        Text="Share"/>
                         </StackPanel>
                     </ListBoxItem>
+
+                    <ListBoxItem>
+                        <Button>
+                            <FontIcon FontFamily="Segoe MDL2 Assets"
+                                  Glyph="&#xE72D;"/>
+                        </Button>
+                    </ListBoxItem>
                     <ListBox.Background>
                         <SolidColorBrush Color="White"/>
                     </ListBox.Background>
