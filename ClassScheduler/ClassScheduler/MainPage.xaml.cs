@@ -22,23 +22,8 @@ namespace ClassScheduler
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPage()
-        {
-            this.InitializeComponent();
-            MyFrame.Navigate(typeof(Schedule));
-        }
+       
 
-        private void MyListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if(HamburgerMenu.IsSelected)
-            {
-                MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-            }
-
-            else if (ScheduleIcon.IsSelected)
-            {
-                MyFrame.Navigate(typeof(Schedule));
-            }
-        }
+       
     }
 }
